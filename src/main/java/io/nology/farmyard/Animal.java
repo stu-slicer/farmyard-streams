@@ -1,8 +1,9 @@
 package io.nology.farmyard;
 
+import java.util.Objects;
 import java.util.StringJoiner;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal> {
 
     private String name;
     private int age;
@@ -38,6 +39,24 @@ public abstract class Animal {
 
     public void setLegs(int legs) {
         this.legs = legs;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(name, animal.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    @Override
+    public int compareTo(Animal o) {
+        return this.name.compareTo(o.name);
     }
 
     @Override
