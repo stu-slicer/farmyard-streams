@@ -42,7 +42,7 @@ public class FarmYard {
 
         animals.add( new Dog("Shep", 8, 4 ));
 
-        animals.add( new Cat("Scobby", 9, 4 ));
+        animals.add( new Cat("Scooby", 9, 4 ));
         animals.add( new Cat("Tiddles", 12, 3 ));
 
 

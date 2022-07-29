@@ -2,7 +2,6 @@ package io.nology.farmyard;
 
 import java.util.List;
 import java.util.Map;
-import java.util.OptionalInt;
 import java.util.stream.Collectors;
 
 public class FamrYardChallenge {
@@ -17,7 +16,7 @@ public class FamrYardChallenge {
 
     /**
      * Get the total number of animals in the farm yard
-     * @return
+     * @return the total number of animals in the farm yard
      */
     public int getAnimalCount() {
         return (int) this.animals.stream().count();
@@ -67,20 +66,6 @@ public class FamrYardChallenge {
     }
 
     /**
-     * Get the youngest animals, in a List.
-     * You will have to do this in two stages, using streams for both!
-     * @return
-     */
-    public List<Animal> getYoungestAnimals() {
-        int youngestAge = this.animals.stream()
-                .mapToInt(animal -> animal.getAge())
-                .min().getAsInt();
-        return this.animals.stream()
-                .filter( animal -> animal.getAge() == youngestAge )
-                .collect(Collectors.toList());
-    }
-
-    /**
      * Get the oldest animal. If more than one is the eldest then just return the first
      * @return
      */
@@ -126,6 +111,7 @@ public class FamrYardChallenge {
 
     public Map<AnimalType, List<Animal>> getMapOfAnimalsByType() {
         return this.animals.stream()
+                .sorted( (a,b) -> a.getName().compareTo( b.getName() ))
                 .collect( Collectors.groupingBy( animal -> animal.getType(),
                         Collectors.toList()
                 ) );
