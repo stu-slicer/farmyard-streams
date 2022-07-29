@@ -87,6 +87,16 @@ public class Main {
                 });
         System.out.println("hardworkMinAgeAnimal = " + hardworkMinAgeAnimal);
 
+        OptionalInt totalNumberOfLegs = farmYard.getAnimals().stream()
+                .map(Animal::getLegs)
+                .mapToInt(Integer::intValue)
+                .reduce((a, total) -> total + a);
+        System.out.println("totalNumberOfLegs = " + totalNumberOfLegs.orElse(-1));
+
+        IntSummaryStatistics ageSummaryStats = farmYard.getAnimals().stream()
+                .mapToInt(animal -> animal.getAge())
+                .summaryStatistics();
+        System.out.println("ageSummaryStats = " + ageSummaryStats);
 
         System.out.println("\n\n\n");
         System.out.println(farmYard.getAnimals().stream()
