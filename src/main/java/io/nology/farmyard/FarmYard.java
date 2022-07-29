@@ -24,7 +24,7 @@ public class FarmYard {
         animals.add( new Cow("Kate", 8, 4 ));
 
         animals.add( new Chicken("Daisy", 10, 2 ));
-        animals.add( new Chicken("Katrina", 12, 2 ));
+        animals.add( new Chicken("Katrina", 15, 2 ));
         animals.add( new Chicken("Wendy", 14, 2 ));
         animals.add( new Chicken("Kate", 8, 2 ));
         animals.add( new Chicken("Jill", 8, 2 ));
@@ -41,6 +41,7 @@ public class FarmYard {
         animals.add( new Horse("Michael", 10, 4 ));
 
         animals.add( new Dog("Shep", 8, 4 ));
+
         animals.add( new Cat("Scobby", 9, 4 ));
         animals.add( new Cat("Tiddles", 12, 3 ));
 
