@@ -68,12 +68,12 @@ public class Artist {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Artist{");
+        final StringBuffer sb = new StringBuffer("Artist[");
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", countryOfOrigin='").append(countryOfOrigin).append('\'');
         sb.append(", tracks=").append(tracks.size());
-        sb.append('}');
+        sb.append(']');
         return sb.toString();
     }
 
