@@ -3,6 +3,9 @@ package io.nology.music;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A collection of music
+ */
 public class MusicCollection {
 
     private List<Artist> artists;
