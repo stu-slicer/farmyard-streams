@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class FamrYardChallengeSolution {
+public class FarmYardChallengeSolution {
 
     private FarmYard farmYard;
     private final List<Animal> animals;
 
-    public FamrYardChallengeSolution() {
+    public FarmYardChallengeSolution() {
         this.farmYard = new FarmYard();
         animals = farmYard.getAnimals();
     }

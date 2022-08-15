@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FamrYardChallengeTest {
+class FarmYardChallengeTest {
 
     public static final Cow CYBIL_COW = new Cow("Cybil", 6, 4 );
     public static final Cow DAISY_COW = new Cow("Daisy", 5, 4 );
@@ -38,11 +38,11 @@ class FamrYardChallengeTest {
 
     public static final Dog SHEP_DOG = new Dog("Shep", 8, 4 );
 
-    private FamrYardChallenge target;
+    private FarmYardChallenge target;
 
     @BeforeEach
     void setUp() {
-        this.target = new FamrYardChallenge();
+        this.target = new FarmYardChallenge();
     }
 
     @Test

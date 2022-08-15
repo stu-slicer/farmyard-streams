@@ -3,12 +3,12 @@ package io.nology.farmyard;
 import java.util.List;
 import java.util.Map;
 
-public class FamrYardChallenge {
+public class FarmYardChallenge {
 
     private FarmYard farmYard;
     private final List<Animal> animals;
 
-    public FamrYardChallenge() {
+    public FarmYardChallenge() {
         this.farmYard = new FarmYard();
         animals = farmYard.getAnimals();
     }
