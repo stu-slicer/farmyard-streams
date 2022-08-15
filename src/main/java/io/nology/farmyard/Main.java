@@ -69,47 +69,5 @@ public class Main {
                 .collect(Collectors.groupingBy(Animal::getName, Collectors.counting()));
         System.out.println("Number by name: " + numberByName);
 
-        Map<String, Animal> mapByAnimalForAnimal = farmYard.getAnimals().stream()
-                .filter(A -> A.getType() == AnimalType.cow)
-                .collect(Collectors.toMap(Animal::getName, Animal -> Animal));
-
-        System.out.println("mapByAnimalForAnimal: " + mapByAnimalForAnimal.keySet());
-
-        Optional<Animal> hardworkMinAgeAnimal = farmYard.getAnimals().stream()
-                .reduce((a, b) -> {
-                    if (a == null) {
-                        return b;
-                    }
-                    if (a.getAge() < b.getAge()) {
-                        return a;
-                    } else
-                        return b;
-                });
-        System.out.println("hardworkMinAgeAnimal = " + hardworkMinAgeAnimal);
-
-        OptionalInt totalNumberOfLegs = farmYard.getAnimals().stream()
-                .map(Animal::getLegs)
-                .mapToInt(Integer::intValue)
-                .reduce((a, total) -> total + a);
-        System.out.println("totalNumberOfLegs = " + totalNumberOfLegs.orElse(-1));
-
-        IntSummaryStatistics ageSummaryStats = farmYard.getAnimals().stream()
-                .mapToInt(animal -> animal.getAge())
-                .summaryStatistics();
-        System.out.println("ageSummaryStats = " + ageSummaryStats);
-
-        System.out.println("\n\n\n");
-        System.out.println(farmYard.getAnimals().stream()
-                .filter(A -> A.getType() == AnimalType.cow || A.getType() == AnimalType.chicken)
-                .collect(Collectors.toMap(Animal::getName, A -> {
-                            ArrayList<Animal> list = new ArrayList<>();
-                            list.add(A);
-                            return list;
-                        },
-                        (A, B) -> {
-                            A.addAll(B);
-                            return A;
-                        }
-                )));
     }
 }
